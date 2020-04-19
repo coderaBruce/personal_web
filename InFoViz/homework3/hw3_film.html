@@ -1,0 +1,113 @@
+<!--//web.cs.kent.edu/~xli74/InFoViz/homework2/homework2.html-->
+<html>
+<head>
+	<style>
+		#myspace01 {
+			width:500px;
+			fill:green;
+			height: 500px;
+			border: 1px solid #000;
+		}
+		.myCss01 { /* Create a block at certain position*/
+			position:absolute;
+			width:400;
+			height:100;
+			top:100;
+			left:1300; /* Positions 50% from right (right edge will be at center) */
+			margin-right:200; /* Positions 200px to the left of center */
+		}
+		/*
+		Talbe style
+			*/
+		table { 
+			width: 100%; 
+			border-collapse: collapse; 
+		}
+		/* Zebra striping */
+		tr:nth-of-type(odd) { 
+			background: #eee; 
+		}
+		th { 
+			background: #333; 
+			color: white; 
+			font-weight: bold; 
+			cursor: s-resize;
+			background-repeat: no-repeat;
+			background-position: 3% center;
+		}
+		td, th { 
+			padding: 6px; 
+			border: 1px solid #ccc; 
+			text-align: left; 
+		}
+		
+		th.des:after {
+		  content: "\21E9";
+		}
+		
+		th.aes:after {
+		  content: "\21E7";
+		}
+		 .lasso path {
+            stroke: rgb(80,80,80);
+            stroke-width:2px;
+        }
+
+		/*
+		Lasso style
+		*/
+        .lasso .drawn {
+            fill-opacity:.05 ;
+        }
+
+        .lasso .loop_close {
+            fill:none;
+            stroke-dasharray: 4,4;
+        }
+
+        .lasso .origin {
+            fill:#3399FF;
+            fill-opacity:.5;
+        }
+
+        <!-- .possible { -->
+        <!--     fill: #EC888C; -->
+        <!-- } -->
+
+        .selected {
+            fill: steelblue;
+        }
+	</style>
+</head>
+<body>
+<p>Homework3/film</p><hr>
+<div class="myCss01">
+	<h1>Figure Description</h1>
+		
+	<h4><li>This is a Scatter Plot with lasso of dataset "a1-film.csv", from this Figure we can 
+		see that film of later years are more</li></h4>
+	<h4><li>Lasso is implemented here</li></h4>
+	<h4><li>Size indicate length</li></h4>
+	<h4><li>Drama(Blue) are usually very long</li></h4>
+	<!-- <h4><li>Animation activated: color changed from red to blue in 10s</li></h4> -->
+</div>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- <script src="https://rawgit.com/twitter/d3kit/v2.0.0/dist/d3kit.js" -->
+<!-- type="text/javascript"></script> -->
+
+
+<!-- <script src = "../lib/d3-lasso-0.0.5/src/lasso.js"></script> -->
+<script src = "../lib/d3-lasso-0.0.5/src/d3-lasso-v5.min.js"></script>
+<script type="text/javascript" src="hw3_table.js"></script>
+<!-- <script src = "lasso_v5.min.js"></script> -->
+<!-- <script src = "https://axc.net/code_libraries/lasso/lasso.min.js"></script> -->
+
+<script type="text/javascript" src= "hw3_film.js?ver=1"></script>
+<!-- <p>Cars</p><hr> -->
+<!-- 	<div id = "myspace01"></div> -->
+<!-- <p>Cereals</p><hr> -->
+<!-- 	<div id = "myspace01"></div> -->
+</body>
+</html>
+

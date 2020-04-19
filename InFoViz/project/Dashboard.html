@@ -1,0 +1,172 @@
+<!--//web.cs.kent.edu/~xli74/InFoViz/homework2/homework2.html-->
+<html>
+<head>
+	<style>
+		#myspace01 {
+			width:500px;
+			fill:green;
+			height: 500px;
+			border: 1px solid #000;
+		}
+		.myCss01 { /* Create a block at certain position here for pieChart*/
+			position:absolute;
+			width:400;
+			height:100;
+			top:-100;
+			left:700; /* 800px from left */
+			margin-right:200; /* Positions 200px to the left of center */
+		}
+		.myCss02 { /* Create a block at certain position here for lasso figure*/
+			position:absolute;
+			width:1000;
+			height:600;
+			top:500;
+			left:700; /* 800px from left */
+			margin-right:200; /* Positions 200px to the left of center */
+			stroke:black;
+		}
+		.myCss03 { /* Create a block at certain position here for literals*/
+			position:absolute;
+			width:700;
+			height:600;
+			top:800;
+			left:50; /* 800px from left */
+			margin-right:200; /* Positions 200px to the left of center */
+			stroke:black;
+		}
+		.svg {
+		  font: 10px sans-serif;
+		  padding: 10px;
+		}
+
+		.axis,
+		.frame {
+		  shape-rendering: crispEdges;
+		}
+
+		.axis line {
+		  stroke: #ddd;
+		}
+
+		.axis path {
+		  display: none;
+		}
+
+		.cell text {
+		  font-weight: bold;
+		  text-transform: capitalize;
+		  fill: black;
+		}
+
+		.frame {
+		  fill: none;
+		  pointer-events: all;
+		  stroke: #aaa;
+		}
+		circle {
+		  fill-opacity: .7;
+		}
+
+		circle.hidden {
+		  fill: #ccc !important;
+		}
+
+		.extent {
+		  fill: #000;
+		  fill-opacity: .125;
+		  stroke: #fff;
+		}
+		/*
+		Talbe style
+			*/
+		table { 
+			width: 100%; 
+			border-collapse: collapse; 
+		}
+		/* Zebra striping */
+		tr:nth-of-type(odd) { 
+			background: #eee; 
+		}
+		th { 
+			background: #333; 
+			color: white; 
+			font-weight: bold; 
+			cursor: s-resize;
+			background-repeat: no-repeat;
+			background-position: 3% center;
+		}
+		td, th { 
+			padding: 6px; 
+			border: 1px solid #ccc; 
+			text-align: left; 
+		}
+		
+		th.des:after {
+		  content: "\21E9";
+		}
+		
+		th.aes:after {
+		  content: "\21E7";
+		}
+		 .lasso path {
+            stroke: rgb(80,80,80);
+            stroke-width:2px;
+        }
+
+		/*
+		Lasso style
+		*/
+        .lasso .drawn {
+            fill-opacity:.05 ;
+        }
+
+        .lasso .loop_close {
+            fill:none;
+            stroke-dasharray: 4,4;
+        }
+
+        .lasso .origin {
+            fill:#3399FF;
+            fill-opacity:.5;
+        }
+
+        <!-- .possible { -->
+        <!--     fill: #EC888C; -->
+        <!-- } -->
+
+        .selected {
+            fill: steelblue;
+        }
+	</style>
+</head>
+<body>
+<p>Project/Mutualfunds</p><hr>
+<div class="myCss01">
+</div>
+<div class="myCss03">
+	<h1>Figure Description</h1>
+		
+	<h4><li>This is a Multi-Matrix Scatter Plot of dataset "a1-mutualfunds.csv", from this Figure we can 
+		see that 1YR, 3MO, 3MO are quite linear</li></h4>
+	<h4><li>Large Growth(red) are usually always higier than others</li></h4>
+	<h4><li>You can click one of the small cell to zoom to see details</li></h4>
+	<h4><li>You can lasso an area for details</li></h4>
+	<!-- <h4><li>Animation activated: color changed from red to blue in 10s</li></h4> -->
+</div>
+<div class="myCss02">
+
+</div>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src = "../lib/d3-lasso-0.0.5/src/d3-lasso-v5.min.js"></script>
+<script type="text/javascript" src= "Dashboard.js?ver=1"></script>
+<script type="text/javascript" src= "lasso.js?ver=1"></script>
+<script type="text/javascript" src= "table.js?ver=1"></script>
+<script type="text/javascript" src= "pieChart.js?ver=1"></script>
+<!-- <p>Cars</p><hr> -->
+<!-- 	<div id = "myspace01"></div> -->
+<!-- <p>Cereals</p><hr> -->
+<!-- 	<div id = "myspace01"></div> -->
+</body>
+</html>
+
